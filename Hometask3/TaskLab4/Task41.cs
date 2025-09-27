@@ -1,4 +1,6 @@
-﻿namespace Hometask3.TaskLab4
+﻿using Hometask3.TaskLab4.Classes;
+
+namespace Hometask3.TaskLab4
 {
 
     /*
@@ -29,11 +31,45 @@
     год. Однако, если он делится без остатка на 400, это високосный год.)
      */
 
-    class Task41
+class LabTask
     {
-
-        public void NumInDate()
+        public LabTask()
         {
+            Console.WriteLine("Экземпляр класса создан!");
+        }
+
+        public void NumInDate() // Упражнение 4.1, определяем какому дню соотвествует число от 1 до 365
+        {
+
+            int[] monthDays = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }; // массив с хранением кол-ва дней в месяцах
+            string[] monthNames = { "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" }; // массив с хранением названий месяцев
+            List<Month> months = new List<Month>(); // список где будут храниться месяцы
+            
+            for (int i = 0; i < monthDays.Length; i++)
+            {
+                months.Add(new Month(monthNames[i], monthDays[i])); // по-быстрому заполняем список месяцев из параллельных массивов
+            }
+
+            Console.Write("Введите число от 1 до 365: ");
+            bool isParsed = int.TryParse(Console.ReadLine(), out var num);
+
+            if (!isParsed) // проверка на то, является ли то, что ввел пользователем типом int
+            {
+                Console.WriteLine("Преобразование выполнить не удалось!");
+                return;
+            }
+
+            foreach (Month month in months)
+            {
+                if (num <= month.GetDays())
+                {
+                    Console.WriteLine($"Месяц: {month.GetName()}\nДень: {num}");
+                    break;
+                } else
+                {
+                    num -= month.GetDays();
+                }
+            }
 
         }
     }
