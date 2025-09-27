@@ -7,5 +7,7 @@ class Start
     {
         LabTask task = new LabTask();
         task.NumInDate();
+
+        //Console.WriteLine(task.CalculateTypeOfYear(2020)); // для отладки
     }
 }
