@@ -68,7 +68,7 @@ namespace Hometask3.TaskLab4_Tumakov_
             Console.ReadKey();
         }
 
-        public void NumInDate()
+        public void NumInDate() 
         {
 
             Print("Задание 4.3\n\n".ToUpper());
