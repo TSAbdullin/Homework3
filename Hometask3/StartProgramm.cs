@@ -12,13 +12,13 @@ namespace Hometask3
     {
         public static void Main(string[] args)
         {
-            //LabTask task = new LabTask();
+            //LabTask task = new LabTask(); // от балды
             //task.NumInDate();
 
-            AnotherRealization test = new AnotherRealization();
+            AnotherRealization test = new AnotherRealization(); // норм реализация на мой вгзляд
             //test.NumInDateFirst();
             //test.NumInDateSecond();
-            test.NumInDate();
+            //test.NumInDate();
         }
     }
 }
