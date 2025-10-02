@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-class Tasks
+class Task
 {
     /* Задача 1
     Дана последовательность из 10 чисел. Определить, является ли эта последовательность
@@ -13,6 +13,8 @@ class Tasks
      */
     public void IsSorted(int[] nums) // метод, который проверяет сортированный массив или нет
     {
+        Console.WriteLine("Задача 1\r\n    Дана последовательность из 10 чисел. Определить, является ли эта последовательность\r\n    упорядоченной по возрастанию. В случае отрицательного ответа определить\r\n    порядковый номер первого числа, которое нарушает данную последовательность.\r\n    Использовать break.\n");
+
         bool isSorted = true; // переменная, которая будет хранить булевое значение, является ли массив сортированным или нет
 
         for (int i = 0; i < nums.Length - 1; i++)
@@ -41,6 +43,8 @@ class Tasks
      */
     public void DefineValueOfCard()
     {
+        Console.WriteLine("Задача 2\r\n    Игральным картам условно присвоены следующие порядковые номера в зависимости от\r\n    их достоинства: «валету» — 11, «даме» — 12, «королю» — 13, «тузу» — 14.\r\n    Порядковые номера остальных карт соответствуют их названиям («шестерка»,\r\n    «девятка» и т. п.). По заданному номеру карты k (6 <=k <= 14) определить достоинство\r\n    соответствующей карты. Использовать try-catch-finally.\n");
+
         Dictionary<int, string> cards = new Dictionary<int, string> // словарь для хранения значений 
             {
                 { 6, "шестерка" },
@@ -54,6 +58,7 @@ class Tasks
                 { 14, "туз" }
             };
 
+        Console.Write($"Введите число k: ");
 
         try
         {
@@ -87,6 +92,8 @@ class Tasks
      */
     public void PrintMatchingValue()
     {
+        Console.WriteLine("Задача 3\r\n    Напишите программу, которая принимает на входе строку и производит выходные\r\n    данные в соответствии с таблицей\n");
+
         Console.Write("Введите строку: ");
         string text = Console.ReadLine();
 
@@ -121,19 +128,11 @@ class Tasks
     выводит на экран его название (понедельник, вторник, ..., воскресенье).
     Использовать enum.
      */
-    enum DayOfWeek
-    {
-        Monday,
-        Tuesday,
-        Wednesday,
-        Thursday,
-        Friday,
-        Saturday,
-        Sunday
-    }
-
+    
     public void PrintDayOfWeek()
     {
+        Console.WriteLine("Задача 4\r\n     Составить программу, которая в зависимости от порядкового номера дня недели (1, 2,...,7) \r\n    выводит на экран его название (понедельник, вторник, ..., воскресенье).\r\n    Использовать enum.\n");
+
         Console.Write("Введите число(от 1 до 7): ");
         
         try
@@ -147,7 +146,7 @@ class Tasks
             {
                 throw new IndexOutOfRangeException("Число не входит в промежуток 1 <= num <= 7");
             } 
-            Console.WriteLine((DayOfWeek)(num - 1));
+            Console.WriteLine((Tasks.AnotherTasks.Enums.DayOfWeek)(num - 1));
 
         } catch (Exception e)
         {
@@ -162,6 +161,8 @@ class Tasks
      */
     public int HowManyDollsInBag(string[] arrStrings)
     {
+        Console.WriteLine("Задача 5\r\n    Создать массив строк. При помощи foreach обойти весь массив. При встрече элемента\r\n    \"Hello Kitty\" или \"Barbie doll\" необходимо положить их в “сумку”, т.е. прибавить к\r\n    результату. Вывести на экран сколько кукол в “сумке”\n");
+
         int count = 0; // переменная счетчик
         
         foreach (var str in arrStrings)

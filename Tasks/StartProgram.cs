@@ -2,7 +2,7 @@
 {
     public static void Main(string[] args)
     {
-        Tasks task = new Tasks();
+        Task task = new Task();
         int[] nums = { 10, 2, 3, 4, 5, 6, 9, 10, -51, 0 };
         string[] arr = { "hello kitty", "doll", "HeLlo Kitty", "Barbie doll", "awfawf", "gsgfbxvs", "BARBie DoLL" };
 
